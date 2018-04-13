@@ -1,6 +1,0 @@
-Händler  der Rh übernommen 
-Händler haben jetzt 2 Öffnungszeiten
-weniger Waffen im Spiel 
-painkiller buff implementiert
-infection auf 50min runtergescharubt
-neue items implementiert

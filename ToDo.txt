@@ -1,0 +1,4 @@
+Killerrabbit durch holypipebomb tödbar machen.
+Spawns anpassen (sind von DCC-mod)
+Qualitätsfarben anpassen in der qualityinfo.xml
+Playerspawn verbessern

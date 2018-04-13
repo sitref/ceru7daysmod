@@ -1,4 +1,5 @@
-Spawns anpassen (sind von DCC-mod)
+Zombiespawns anpassen (sind von DCC-mod)
 Qualitätsfarben anpassen in der qualityinfo.xml
 Playerspawn verbessern
-beschreibungen für die neuen items erstellen
+Beschreibungen für die neuen items erstellen
+Hänlder Preise erhöhen und verkaufswerte noch weiter reduzieren 

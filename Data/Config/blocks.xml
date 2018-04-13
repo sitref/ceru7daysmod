@@ -297,9 +297,7 @@ tbnsew:
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="destroyedStone" count="1" prob="0.75" stick_chance="1"/>
 	<property name="CanMobsSpawnOn" value="true"/>
-	<!-- A15
 	<property name="BuffsWhenWalkedOn" value="asphaltStaBoostTrigger"/>
-	-->
 	<property name="EconomicValue" value="45"/>
 	<property name="EconomicBundleSize" value="20"/>
 </block>
@@ -721,9 +719,7 @@ tbnsew:
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="destroyedStone" count="1" prob="0.75" stick_chance="1"/>
 	<property name="CanMobsSpawnOn" value="true"/>
-	<!-- A15
 	<property name="BuffsWhenWalkedOn" value="asphaltStaBoostTrigger"/>
-	-->
 	<property name="EconomicValue" value="45"/>
 	<property name="EconomicBundleSize" value="20"/>
 </block>
@@ -4078,7 +4074,7 @@ group desc for stuff like metal siding
 <block id="409" name="trapSpikesDamage1">
 	<property name="Extends" value="trapSpikesNew"/>
 	<property name="Model" value="Traps/trap_spikes01_damage01" param1="main_mesh"/>
-	<property name="DowngradeBlock" value="trapSpikesDamage2"/>
+	<property name="DowngradeBlock" value="trapSpikesDamage3"/>
 	<property class="UpgradeBlock">
 		<property name="ToBlock" value="trapSpikesNew"/>
 		<property name="Item" value="wood"/>
@@ -4098,7 +4094,7 @@ group desc for stuff like metal siding
 <block id="411" name="trapSpikesDamage3">
 	<property name="Extends" value="trapSpikesDamage1"/>
 	<property name="Model" value="Traps/trap_spikes01_damage03" param1="main_mesh"/>
-	<property name="DowngradeBlock" value="trapSpikesDamage4"/>
+	<property name="DowngradeBlock" value="trapSpikesDamage5"/>
 	<property class="UpgradeBlock"> <property name="ItemCount" value="9"/> <property name="ToBlock" value="trapSpikesNew"/> </property>
 </block>
 

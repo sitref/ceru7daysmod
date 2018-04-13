@@ -140,7 +140,7 @@ built-in buff variables:
 <buff id="trapDamage1Effect" buffif="CTRtrapDmg1 greater 0" debuffif="CTRtrapDmg1 less 1" duration="0" type="bleeding" actions="increment(CTRtrapDmg1, -1, 1, 0, 0)"
 	name_key="trapDamage1EffectName" description_key="trapDamage1EffectDesc" tooltip_key="trapDamage1EffectTooltip" icon="ui_game_symbol_critical" >
 	<modify id="0" stat="stamina" amount="-1" rate="1"/>
-	<modify id="1" stat="health" amount="-1" rate="1"/>
+	<modify id="1" stat="health" amount="-2" rate="1"/>
 </buff>
 
 <!-- Special buff for (small) wood spikes that only affects zombehs -->
@@ -170,7 +170,7 @@ The "MetabolizeBeer" buff will slowly reduce the beer variable.
 	<modify id="0" stat="stamina" amount="2" rate="1"/>
 </buff>
 
-<buff id="DrinkGrainAlcohol" duration="1" actions="increment(beers, 4, 0, 0, 1)">
+<buff id="DrinkGrainAlcohol" duration="1" actions="increment(beers, 6, 0, 0, 1)">
 	<modify id="0" stat="stamina" amount="2" rate="1"/>
 </buff>
 
@@ -202,7 +202,7 @@ The "MetabolizeBeer" buff will slowly reduce the beer variable.
 	<modify id="0" stat="stamina" amount="-1" rate="1"/>
 </buff>
 
-<buff id="AlcoholPoisoning" buffif="beers greater 14" debuffif="beers less 9" ondebuff="SickDrunk" actions="increment(@wellness, -1, 100t, 0, 0);debuff(SickDrunk);debuff(Hangover)"
+<buff id="AlcoholPoisoning" buffif="beers greater 10" debuffif="beers less 9" ondebuff="SickDrunk" actions="increment(@wellness, -1, 100t, 0, 0);debuff(SickDrunk);debuff(Hangover)"
 	type="bleeding" icon="ui_game_symbol_food_poisoning" name_key="alcoholPoisoning" description_key="alcoholPoisoningDesc" tooltip_key="alcoholPoisoningTooltip">
 	<modify id="0" stat="stamina" amount="-5" rate="1"/>
 	<modify id="0" stat="speedmodifier" setValue="0.40"/>
@@ -242,6 +242,11 @@ The "MetabolizeBeer" buff will slowly reduce the beer variable.
 	<modify id="1" stat="coretemp" modifyValue="-10"/>
 </buff>
 
+<buff id="redTeaWarming" duration="180" stack="extend" type="staminaup" icon="ui_game_symbol_tea"
+	name_key="stewWarmingDesc" description_key="stewWarmingDesc" tooltip_key="stewWarmingDescTooltip" causes="MacceruTea">
+	<modify id="1" stat="coretemp" modifyValue="10"/>
+</buff>
+
 <buff id="criticalBlunt" hitmask="body;head" critical="true" duration="1" icon="ui_game_symbol_stunned"
 	name_key="criticalBlunt" description_key="criticalBluntDesc" tooltip_key="criticalBluntTooltip" castsound="Buffs/critical_blunt">
 	<modify id="1" stat="health" amount="-100" rate="1"/>
@@ -268,24 +273,24 @@ The "MetabolizeBeer" buff will slowly reduce the beer variable.
 
 <buff id="smelly" duration="30" smell="largeSmell" icon="ui_game_symbol_dysentery" name_key="smelly" description_key="smellyDesc" tooltip_key="smellyTooltip"/>
 
-<buff id="infection" mutex="cured,infection1,infection2,infection3,infection4" duration="9000" onexpired="infection1" type="sickness"
+<buff id="infection" mutex="cured,infection1,infection2,infection3,infection4" duration="900" onexpired="infection1" type="sickness"
 	icon="ui_game_symbol_infection" name_key="infection" description_key="infectionDesc" tooltip_key="infectionTooltip" cures="foodHoney,antibiotics,herbalAntibiotics">
 </buff>
 
-<buff id="infection1" duration="9000" actions="debuff(infection)" onexpired="infection2" type="sickness"
-	icon="ui_game_symbol_infection" name_key="infection1" description_key="infection1Desc" tooltip_key="infection1Tooltip" cures="antibiotics">
+<buff id="infection1" duration="900" actions="debuff(infection)" onexpired="infection2" type="sickness"
+	icon="ui_game_symbol_infection" name_key="infection1" description_key="infection1Desc" tooltip_key="infection1Tooltip" cures="antibiotics,herbalAntibiotics">
 	<modify id="0" stat="stamina" amount="-0.3" rate="1"/>
 </buff>
 
-<buff id="infection2" duration="9000" actions="damage(25,2100t,0,3);increment(@wellness, -0.25, 100t, 0, 0);debuff(infection);debuff(infection1)" onexpired="infection3" type="sickness"
+<buff id="infection2" duration="900" actions="damage(25,2100t,0,3);increment(@wellness, -0.25, 100t, 0, 0);debuff(infection);debuff(infection1)" onexpired="infection3" type="sickness"
 	icon="ui_game_symbol_infection" name_key="infection2" description_key="infection2Desc" tooltip_key="infection2Tooltip" cures="antibiotics">
-	<modify id="0" stat="stamina" amount="-1" rate="1"/>
+	<modify id="0" stat="stamina" amount="-1" rate="2"/>
 </buff>
 
-<buff id="infection3" duration="3000" actions="damage(25,800t,0,3);increment(@wellness, -0.25, 100t, 0, 0);debuff(infection);debuff(infection1);debuff(infection2)" onexpired="infection4" type="sickness"
+<buff id="infection3" duration="300" actions="damage(25,800t,0,3);increment(@wellness, -0.25, 100t, 0, 0);debuff(infection);debuff(infection1);debuff(infection2)" onexpired="infection4" type="sickness"
 	icon="ui_game_symbol_infection" name_key="infection3" description_key="infection3Desc" tooltip_key="infection3Tooltip" cures="antibiotics">
-	<modify id="0" stat="stamina" amount="-2" rate="1"/>
-	<modify id="1" stat="health" amount="-1" rate="3"/>
+	<modify id="0" stat="stamina" amount="-2" rate="2"/>
+	<modify id="1" stat="health" amount="-1" rate="5"/>
 </buff>
 
 <buff id="infection4" actions="kill" icon="ui_game_symbol_infection" name_key="infection4" description_key="infection4Desc" tooltip_key="infection4Tooltip"/>
@@ -298,8 +303,32 @@ The "MetabolizeBeer" buff will slowly reduce the beer variable.
 	<modify id="1" stat="health" amount="1" rate="1"/>
 </buff>
 
-<buff id="painkillerBuff" duration="90" stack="extend" type="healthup" icon="ui_game_symbol_pills" name_key="painkillersBuffName" description_key="painkillersBuffDesc" tooltip_key="painkillersBuffTooltip" causes="painkillers">
-	<modify id="1" stat="health" amount="0.34" rate="1"/>
+<buff id="painkillerBuff" duration="1" actions="increment(painkillers, 1, 0, 0, 1)">
+	
+</buff>
+
+<buff id="metabolizepainkillerBuff" buffif="painkillerBuff greater 0" debuffif="painkillerBuff less 1" actions="increment(painkillers, -1, 900, 0, 0);min(painkillerBuff, 0)">
+
+</buff>
+
+<buff id="painkillerBuffstage1"  mutex="painkillerBuffstage2,painkillerBuffstage3,painkillerBuffstage4" duration="60" stack="extend" type="healthup" buffif="painkillers greater 0" 
+icon="ui_game_symbol_pills" name_key="painkillersBuffName" description_key="painkillersBuffDesc" tooltip_key="painkillersBuffTooltip" causes="painkillers">
+	<modify id="1" stat="health" amount="0.33" rate="1"/>
+</buff>
+
+<buff id="painkillerBuffstage2" mutex="painkillerBuffstage3,painkillerBuffstage4" buffif="painkillers greater 10" actions="debuff(painkillerBuffstage1)"
+	type="healthup" icon="ui_game_symbol_pills" name_key="painkillersBuffName" description_key="painkillersBuffDesc" tooltip_key="painkillersBuffTooltip" causes="painkillers">
+	<modify id="1" stat="health" amount="0.24" rate="1"/>
+</buff>
+
+<buff id="painkillerBuffstage3" mutex="painkillerBuffstage4" buffif="painkillers greater 20" actions="debuff(painkillerBuffstage2)"
+	type="healthup" icon="ui_game_symbol_pills" name_key="painkillersBuffName" description_key="painkillersBuffDesc" tooltip_key="painkillersBuffTooltip" causes="painkillers">
+	<modify id="1" stat="health" amount="0.19" rate="1"/>
+</buff>
+
+<buff id="painkillerBuffstage4" buffif="painkillers greater 30" actions="debuff(painkillerBuffstage3)"
+	type="healthup" icon="ui_game_symbol_pills" name_key="painkillersBuffName" description_key="painkillersBuffDesc" tooltip_key="painkillersBuffTooltip" causes="painkillers">
+	<modify id="1" stat="health" amount="0.16" rate="1"/>
 </buff>
 
 <buff id="internalBleeding" duration="10" stack="reset" actions="damage(0,1,0,1);damage(0,3,0,0)" type="bleeding" icon="ui_game_symbol_critical" name_key="internalBleeding" description_key="internalBleedingDesc" tooltip_key="internalBleedingTooltip" causes="brokenGlass">
@@ -466,15 +495,12 @@ actions="debuff(burningSmall);attach(ParticleEffects/p_onFire, @impact);damage(0
 </buff>
 
 <buff id="asphaltStaBoostTrigger" duration="1" actions="setvar(CTRroadrun, 10)" />
-<buff id="asphaltStaminaEffect" duration="0" buffif="CTRroadrun greater 0" debuffif="CTRroadrun less 1" actions="increment(CTRroadrun, -1, 1, 0, 0)" >
-	<modify id="0" stat="stamina" amount="1" rate="2"/>
-</buff>
-<!-- GTC
+
 <buff id="asphaltStaminaEffect" duration="0" buffif="CTRroadrun greater 0" debuffif="CTRroadrun less 1" actions="increment(CTRroadrun, -1, 1, 0, 0)"
 	icon="ui_game_symbol_run" name_key="Road Runner" description_key="Meep meep!" tooltip_key="Meep meep!">
 	<modify id="0" stat="stamina" amount="1" rate="1"/>
-</buff>
--->
+				</buff>
+
 
 <buff id="critGunMP5" duration="1" castsound="Buffs/critical_blunt" >
 	<modify id="1" stat="health" amount="-100" rate="1"/>

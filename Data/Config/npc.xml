@@ -14,7 +14,7 @@
 		name_key="npc_traderRekt"
 		faction="whiteriver"
 		greeting_type="nearby"
-		trader_id="1" dialog_id="medstudent1" />
+		trader_id="2" dialog_id="medstudent1" />
 
 	<factions>
 		<faction name="none">

@@ -3,7 +3,7 @@
 	<world ruleset="vanilla" />
 
 	<rulesets>
-		<ruleset name="vanilla" cell_cache_size="4" cell_size="1000" cell_offset="0" generation_distance="2500" terrain_generator="vanilla" biome_generator="vanilla">
+		<ruleset name="vanilla" cell_cache_size="4" cell_size="1150" cell_offset="0" generation_distance="2500" terrain_generator="vanilla" biome_generator="vanilla">
 			<cell_rule name="default" prob="1"/>
 			<!--<cell_rule name="customHubTest" position="0,1" prob="0"/>-->
 		</ruleset>
@@ -15,11 +15,11 @@
 			<path_material value="asphalt" />
 			<path_radius value="2" />
 
-			<hub_rule name="townSmall" prob="1"/>
+			<hub_rule name="townSmall" prob="0.9"/>
 			<hub_rule name="townLarge" prob="1"/>
 			<hub_rule name="citySmall" prob="1"/>
 			<hub_rule name="cityLarge" prob="1"/>
-			<hub_rule name="rural" prob="1"/>
+			<hub_rule name="rural" prob="0.9"/>
 
 			<wilderness_rule name="wildernessDefault"/>
 		</cell_rule>
@@ -185,7 +185,6 @@
 			<prefab rule="industrialGroup"/>
 			<prefab rule="ruralGroup"/>
 			<prefab rule="detailFillerGroup"/>
-			<prefab rule="traderGroup" min_count="1" max_count="1"/>
 		</prefab_rule>
 
 		<prefab_rule name="residentialOldGroup">
@@ -297,6 +296,7 @@
 			<prefab name="skate_park_01"  max_count="1"/>
 			<prefab name="store_laundry_01" max_count="1" />
 			<prefab name="store_salon" max_count="1" />
+			<prefab rule="traderGroup" max_count="1" prob="0.6"/>
 		</prefab_rule>
 
 		<prefab_rule name="downtownGroup">
@@ -347,7 +347,6 @@
 		</prefab_rule>
 
 		<prefab_rule name="industrialGroup">
-			<prefab rule="traderGroup" min_count="1" max_count="1"/>
 			<prefab name="utility_waterworks_01" max_count="1"/>
 			<prefab name="utility_electric_co_01" />
 			<prefab name="utility_refinery_01" max_count="1"/>
@@ -364,7 +363,7 @@
 			<prefab name="vacant_lot_med_02"/>
 			<prefab name="vacant_lot_sm_01"/>
 			<prefab name="vacant_lot_sm_02"/>
-			<prefab name="army_barracks_01" />
+			<prefab name="army_barracks_01" max_count="3" />
 			<prefab name="mp_waste_bldg_01_white" />
 			<prefab name="mp_waste_bldg_03_white" />
 			<prefab name="mp_waste_bldg_04_white" />
@@ -389,6 +388,7 @@
 			<prefab name="waste_rubble_bldg_08" />
 			<prefab name="waste_rubble_bldg_09" />
 			<prefab name="mp_waste_sewer_hole_1" />
+			<prefab rule="traderGroup" max_count="1" prob="0.6"/>
 		</prefab_rule>
 
 		<prefab_rule name="ruralGroup">
@@ -420,9 +420,10 @@
 			<prefab name="oldwest_sm_shop_01"/>
 			<prefab name="oldwest_sm_shop_02"/>
 			<prefab name="oldwest_sm_shop_03"/>
-			<prefab name="army_camp_01" />
-			<prefab name="army_camp_02" />
-			<prefab name="army_camp_03" />
+			<prefab name="army_camp_01" max_count="1" />
+			<prefab name="army_camp_02" max_count="1" />
+			<prefab name="army_camp_03" max_count="1" />
+			<prefab rule="traderGroup" max_count="1" prob="0.6"/>
 		</prefab_rule>
 
 		<prefab_rule name="wildernessGroup">
@@ -576,7 +577,7 @@
 			</module>
 			<module name="fastMountainsScaled" type="ScaleBiasOutput">
 				<property name="sourceModule" value="fastMountainsT"/>
-				<property name="scale" value="1"/> 
+				<property name="scale" value="0.9"/> 
 			</module>
 			<module name="fastWaterBase" type="FastRidgedMultifractal">
 				<property name="frequency" value="0.0000035"/>
@@ -587,7 +588,7 @@
 			<module name="fastWaterScaled" type="ScaleBiasOutput">
 				<property name="sourceModule" value="fastWaterBase2"/>
 				<property name="scale" value="1"/>
-				<property name="bias" value="-0.15"/>
+				<property name="bias" value="1"/>
 			</module>
 			<module name="fastWaterClamped" type="ClampOutput">
 				<property name="sourceModule" value="fastWaterScaled"/>
@@ -618,7 +619,7 @@
 
 			<module name="scaleBiasOutput" type="ScaleBiasOutput">
 				<property name="sourceModule" value="finalLand"/>
-				<property name="scale" value="182"/>
+				<property name="scale" value="130"/>
 			</module>
 
 			<output module="scaleBiasOutput"/>
@@ -728,7 +729,7 @@
 		</biome_spawn_rule>
 
 		<biome_spawn_rule name="radiated">
-			<distance_from_center range="2500,10000"/>
+			<distance_from_center range="2142,10000"/>
 		</biome_spawn_rule>
 
 		<biome_spawn_rule name="water">

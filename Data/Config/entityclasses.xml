@@ -48,8 +48,8 @@
 	<property name="MapIcon" value="ui_game_symbol_map_player_arrow"/>
 	<property name="IsEnemyEntity" value="false"/>
 	<property name="DropInventoryBlock" value="cntBackpackDropped"/>
-	<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="bottledWater,canChili,firstAidBandage,torch,keystoneBlock"/>
-	<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="bottledWater,canChili,firstAidBandage,torch,keystoneBlock"/>
+	<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="bottledWater,canChili,firstAidBandage,torch"/>
+	<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="bottledWater,canChili,firstAidBandage,torch"/>
 	<property name="ExperienceGain" value="173"/>
 	<property name="LegsExplosionDamageMultiplier" value="1"/>
 	<property name="ArmsExplosionDamageMultiplier" value="1"/>
@@ -143,8 +143,8 @@
 	<property name="IsEnemyEntity" value="true"/>
 
 	<!-- Stealth settings -->
-	<property name="SightRange" value="30"/> <!-- distance in m -->
-	<property name="SightScale" value="-2,150"/> <!-- how well lit you have to be for the zombie to see you at min,max range -->
+	<property name="SightRange" value="60"/> <!-- distance in m -->
+	<property name="SightScale" value="-10,130"/> <!-- how well lit you have to be for the zombie to see you at min,max range -->
 
 	<property name="SleeperWakeupSightDetectionMin" value="-40,5"/> <!-- Indiv.Random. sight capability - "I see you" light value at point blank -->
 	<property name="SleeperWakeupSightDetectionMax" value="340,480"/> <!-- Indiv.Random. "I see you" light value at "SightRange" -->
@@ -158,8 +158,8 @@
 	<property name="SoundSleeperSenseChance" value=".5"/> <!-- the chance to play "SoundSleeperSense" when "SleeperSmellSenseThreshold" is triggered -->
 	<property name="SleeperSmellWakeThreshold" value="40,100"/>
 
-	<property name="NoiseAlertThreshold" value="30"/> <!-- for awake zombies -->
-	<property name="SmellAlertThreshold" value="40"/> <!-- for awake zombies -->
+	<property name="NoiseAlertThreshold" value="15"/> <!-- for awake zombies -->
+	<property name="SmellAlertThreshold" value="15"/> <!-- for awake zombies -->
 
 	<property name="SurfaceCategory" value="organic"/> <!-- determines the particle effect played on hit -->
 	<property name="WalkType" value="7"/>
@@ -1781,6 +1781,43 @@
 	<drop event="Harvest" name="animalHide" tool_category="Butcher" count="2"/>
 </entity_class>
 
+<entity_class name="killerRabbit" extends="animalTemplateHostile">
+	<property name="Mesh" value="Animals/Rabbit/RABBIT"/>
+	<property name="Prefab" value="NPC"/>
+	<property name="Class" value="EntityAnimalRabbit"/>
+	<property name="Parent" value="Enemies"/>
+	<property name="Weight" value="10"/>
+	<property name="HandItem" value="handAnimalZombieBear"/>
+	<property name="MaxHealth" value="10000"/>
+	<property name="PhysicsBody" value="rabbit"/>
+	<property name="AITask-1" value="BreakDoor"/>
+	<property name="AITask-2" value="BreakBlock"/>
+	<property name="AITask-3" value="Territorial"/>
+	<property name="AITask-4" value="ApproachAndAttackTarget" param1="EntityPlayer" param2="15"/>
+	<property name="AITask-5" value="ApproachAndAttackTarget" param1="EntityNPC" param2="15"/>
+	<property name="AITask-6" value="ApproachSpot"/>
+	<property name="AITask-7" value="Wander"/>
+	<property name="AITarget-1" value="SetAsTargetIfHurt" param1="EntityNPC"/>
+	<property name="AITarget-2" value="SetAsTargetIfHurt" param1="EntityPlayer"/>
+	<property name="AITarget-3" value="BlockingTargetTask"/>
+	<property name="AITarget-4" value="SetNearestCorpseAsTarget" param1="EntityPlayer"/>
+	<property name="AITarget-5" value="SetNearestEntityAsTarget" param1="EntityNPC"/>
+	<property name="AITarget-6" value="SetNearestEntityAsTarget" param1="EntityPlayer"/>
+	<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>
+	<property name="SoundHurt" value="Animals/rabbitpain"/>
+	<property name="SoundDeath" value="Animals/rabbitdeath"/>
+	<property name="PanicSpeed" value="1.5"/>
+	<property name="ExperienceGain" value="1730"/>
+	<property name="SwimOffset" value="2"/>
+	<property name="Faction" value="animals"/>
+	<property name="HasRagdoll" value="true"/>
+	<property name="DeadBodyHitPoints" value="175"/>
+	<drop event="Harvest" name="rawMeat" tool_category="Butcher" count="4"/> <!-- animalRabbit -->
+	<drop event="Harvest" name="animalHide" tool_category="Butcher" count="2"/>
+	<property name="Buffs" value="zombieRadiatedBuff80"/>
+	<property name="SurfaceCategory" value="glass"/>
+</entity_class>
+
 <entity_class name="animalBoar" extends="animalTemplateHostile">
 	<property name="IsEnemyEntity" value="false"/><!-- override hostile template setting so he can spawn in safe zones -->
 	<property name="AvatarController" value="AvatarAnimalController"/>
@@ -2167,7 +2204,7 @@
 
 <entity_class name="npcTraderJimmy" extends="npcTraderTemplate">
 	<property name="Archetype" value="TraderJimmy"/>
-	<property name="NPCID" value="traderric"/>
+	<property name="NPCID" value="traitorjoel"/>
 </entity_class>
 
 <entity_class name="npcTraderHugh" extends="npcTraderTemplate">

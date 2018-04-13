@@ -21,7 +21,7 @@
 		<entity name="zombieNurse" prob="0.3" />
 		<entity name="zombieSteveCrawlerFeral" />
 		<entity name="zombieSnow" />
-		<entity name="zombieFatCop" prob="0.2" />
+		<entity name="zombieFatCop" prob="0.05" />
 		<entity name="zombieBurnt" />
 		<entity name="zombieScreamer" prob="0.2" />
 	</entitygroup>
@@ -46,7 +46,7 @@
 		<entity name="zombieNurse" prob="0.3" />
 		<entity name="zombieSteveCrawlerFeral" />
 		<entity name="zombieSnow" />
-		<entity name="zombieFatCop" prob="0.2" />
+		<entity name="zombieFatCop" prob="0.05" />
 		<entity name="zombieBurnt" />
 		<entity name="zombieScreamer" prob="0.2" />
 	</entitygroup>
@@ -68,13 +68,13 @@
 		<entity name="animalZombieDog" prob="0.1" />
 		<entity name="zombieNurse" prob="0.3" />
 		<entity name="zombieSteveCrawlerFeral" />
-		<entity name="zombieFatCop" prob="0.2" />
+		<entity name="zombieFatCop" prob="0.05" />
 		<entity name="zombieBurnt" />
 		<entity name="zombieScreamer" prob="0.2" />
 		<entity name="zombieMaleHazmat" prob="0.05" />
 		<entity name="zombieMaleHazmat" prob="0.05" />
 		<entity name="zombieFatHawaiian" />
-		<entity name="zombieSnow" prob="0.2"/>
+		<entity name="zombieSnow" prob="0.1"/>
 	</entitygroup>
 
 	<entitygroup name="ZombiesWastelandNight">

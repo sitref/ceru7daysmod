@@ -2702,17 +2702,17 @@ Mesh files no longer used:
 	<property name="Explosion.BlockDamage" value="5"/>
 	<property name="Explosion.EntityDamage" value="20"/>
 	<property name="Explosion.ParticleIndex" value="1"/>
-	<property name="Explosion.RadiusBlocks" value="10"/>
-	<property name="Explosion.RadiusEntities" value="15"/>
+	<property name="Explosion.RadiusBlocks" value="20"/>
+	<property name="Explosion.RadiusEntities" value="10"/>
 	<property name="Explosion.DamageBonus.stone" value="0"/>
-	<property name="Explosion.DamageBonus.organic" value="0.5"/>
+	<property name="Explosion.DamageBonus.organic" value="10000"/>
 	<property name="Explosion.DamageBonus.metal" value="0"/>
 	<property name="Explosion.DamageBonus.earth" value="0"/> <!-- should work? -->
 	<property name="Explosion.DamageBonus.wood" value="0"/>
 	<property name="Explosion.DamageBonus.water" value="0"/>
 	<property name="Explosion.DamageBonus.glass" value="10000"/>
-	<property name="Explosion.BlastPower" value="350"/> <!-- (int,200) how far ragdolls and such are flung -->
-	<property name="FuseTime" value="4"/> <!-- End: Needed for  time in sec, max 6 -->
+	<property name="Explosion.BlastPower" value="450"/> <!-- (int,200) how far ragdolls and such are flung -->
+	<property name="FuseTime" value="5"/> <!-- End: Needed for  time in sec, max 6 -->
 	<property name="DropScale" value="2"/>
 	<property class="Action0"> <!-- AttackAction -->
 		<property name="Class" value="ThrowAway"/>

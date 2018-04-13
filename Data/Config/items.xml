@@ -2699,13 +2699,13 @@ Mesh files no longer used:
 	<property name="HoldType" value="25"/>
 	<property name="Stacknumber" value="1"/> <!-- STK explosives -->
 	<property name="EconomicValue" value="0"/>
-	<property name="Explosion.BlockDamage" value="5"/>
-	<property name="Explosion.EntityDamage" value="20"/>
+	<property name="Explosion.BlockDamage" value="50"/>
+	<property name="Explosion.EntityDamage" value="20000"/>
 	<property name="Explosion.ParticleIndex" value="1"/>
-	<property name="Explosion.RadiusBlocks" value="20"/>
-	<property name="Explosion.RadiusEntities" value="10"/>
+	<property name="Explosion.RadiusBlocks" value="30"/>
+	<property name="Explosion.RadiusEntities" value="8"/>
 	<property name="Explosion.DamageBonus.stone" value="0"/>
-	<property name="Explosion.DamageBonus.organic" value="10000"/>
+	<property name="Explosion.DamageBonus.organic" value="1000"/>
 	<property name="Explosion.DamageBonus.metal" value="0"/>
 	<property name="Explosion.DamageBonus.earth" value="0"/> <!-- should work? -->
 	<property name="Explosion.DamageBonus.wood" value="0"/>
@@ -7259,7 +7259,7 @@ Mesh files no longer used:
 	<property name="Material" value="organic"/>
 	<property name="HoldType" value="23"/>
 	<property name="Stacknumber" value="500"/> <!-- STK resource -->
-	<property name="EconomicValue" value="1"/>
+	<property name="EconomicValue" value="4"/>
 	<property class="Action1">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -7282,7 +7282,7 @@ Mesh files no longer used:
 	<property name="Weight" value="5"/>
 	<property name="HoldType" value="14"/>
 	<property name="Stacknumber" value="15"/> <!-- STK resource -->
-	<property name="EconomicValue" value="5"/>
+	<property name="EconomicValue" value="2"/>
 	<property name="EconomicBundleSize" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<property name="CraftingIngredientTime" value="10"/>
@@ -7310,7 +7310,7 @@ Mesh files no longer used:
 	<property name="Weight" value="5"/>
 	<property name="HoldType" value="14"/>
 	<property name="Stacknumber" value="1"/>
-	<property name="EconomicValue" value="8"/>
+	<property name="EconomicValue" value="4"/>
 	<property name="CraftingIngredientTime" value="10"/>
 	<property class="Action1">
 		<property name="Class" value="Eat"/>

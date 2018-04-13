@@ -24,6 +24,17 @@
 		<entity name="zombieFatCop" prob="0.05" />
 		<entity name="zombieBurnt" />
 		<entity name="zombieScreamer" prob="0.2" />
+		<entity name="zombieBoe" />
+		<entity name="zombieJoe" />
+		<entity name="zombieYo" />
+		<entity name="zombieDarlene" />
+		<entity name="zombieMarlene" />
+		<entity name="zombieSkateboarder" />
+		<entity name="zombieCheerleader" prob="0.3" />
+		<entity name="zombieOldTimer" prob="0.3" />
+		<entity name="zombieStripper" prob="0.3" />
+		<entity name="zombieUtilityWorker" prob="0.3" />
+		<entity name="zombieFatHawaiian" prob="0.3" />
 	</entitygroup>
 
 	<entitygroup name="ZombiesNight">
@@ -49,6 +60,17 @@
 		<entity name="zombieFatCop" prob="0.05" />
 		<entity name="zombieBurnt" />
 		<entity name="zombieScreamer" prob="0.2" />
+		<entity name="zombieBoe" />
+		<entity name="zombieJoe" />
+		<entity name="zombieYo" />
+		<entity name="zombieDarlene" />
+		<entity name="zombieMarlene" />
+		<entity name="zombieSkateboarder" />
+		<entity name="zombieCheerleader" prob="0.3" />
+		<entity name="zombieOldTimer" prob="0.3" />
+		<entity name="zombieStripper" prob="0.3" />
+		<entity name="zombieUtilityWorker" prob="0.3" />
+		<entity name="zombieFatHawaiian" prob="0.3" />
 	</entitygroup>
 
 	<entitygroup name="ZombiesWasteland">
